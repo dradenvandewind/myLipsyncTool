@@ -1,0 +1,13 @@
+python pts_analyzer.py fix input.mp4 output.mp4 - Auto-detect and fix drift
+
+    python pts_analyzer.py fix input.mp4 output.mp4 0.15 - Fix with 150ms audio delay
+
+    python pts_analyzer.py fix2 input.mp4 output.mp4 -0.1 - Fix with 100ms audio advance using alternative method
+analyze <file>              - Generate PTS analysis report
+
+pts_analyzer monitor <file>              - Monitor PTS in real-time"
+pts_analyzer sync <file>                 - Check audio/video sync"
+pts_analyzer fix <file> <output>         - Fix audio drift (auto-detect)          Uses the adelay and atrim filters to adjust audio timing
+pts_analyzer fix <file> <output> <drift> - Fix audio drift with specified value
+pts_analyzer fix2 <file> <output>        - Alternative fix method (auto-detect)   Alternative approach using the asetpts filter
+pts_analyzer  fix2 <file> <output> <drift>- Alternative fix with specified value
