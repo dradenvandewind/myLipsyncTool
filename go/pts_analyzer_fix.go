@@ -366,7 +366,7 @@ func (a *PTSAnalyzer) FixAudioDrift(outputFile string, driftSeconds *float64) er
 	} else {
 		// Audio is ahead of video, need to trim beginning
 		fmt.Printf("Advancing audio by %.6f seconds\n", math.Abs(drift))
-		filterComplex = fmt.Sprintf("atrim=start=%.6f:end=10000,asetpts=PTS-STARTPTS", math.Abs(drift))
+		filterComplex = fmt.Sprintf("atrim=start=%.6f,asetpts=PTS-STARTPTS", math.Abs(drift))
 	}
 
 	// Build ffmpeg command

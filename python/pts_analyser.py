@@ -303,7 +303,7 @@ class PTSAnalyzer:
             else:
                 # Audio is ahead of video, need to trim beginning
                 print(f"Advancing audio by {abs(drift_seconds):.6f} seconds")
-                filter_complex = f"atrim=start={abs(drift_seconds)}:end=10000,asetpts=PTS-STARTPTS"
+                filter_complex = f"atrim=start={abs(drift_seconds)},asetpts=PTS-STARTPTS"
             
             # Build ffmpeg command
             cmd = [
